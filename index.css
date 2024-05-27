@@ -5,10 +5,16 @@ body {
     font-weight: bold;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
 }
 
 h1 {
     color: goldenrod;
+    font-size: 4rem;
 }
 
 #message-el {

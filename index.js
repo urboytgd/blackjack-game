@@ -1,6 +1,6 @@
 let player = {
-    name: "Per",
-    chips: 200
+    name: "Daniel",
+    chips: 2000
 }
 
 let cards = []
@@ -47,6 +47,29 @@ function renderGame() {
     } else if (sum === 21) {
         message = "You've got Blackjack!"
         hasBlackJack = true
+        // CONFETTI FIRES
+        fire(0.25, {
+            spread: 26,
+            startVelocity: 55,
+          });
+          fire(0.2, {
+            spread: 60,
+          });
+          fire(0.35, {
+            spread: 100,
+            decay: 0.91,
+            scalar: 0.8
+          });
+          fire(0.1, {
+            spread: 120,
+            startVelocity: 25,
+            decay: 0.92,
+            scalar: 1.2
+          });
+          fire(0.1, {
+            spread: 120,
+            startVelocity: 45,
+          });
     } else {
         message = "You're out of the game!"
         isAlive = false
@@ -62,4 +85,18 @@ function newCard() {
         cards.push(card)
         renderGame()        
     }
+}
+
+// CODE FOR CONFETTI EFFECT
+var count = 200;
+var defaults = {
+  origin: { y: 0.7 }
+};
+
+function fire(particleRatio, opts) {
+  confetti({
+    ...defaults,
+    ...opts,
+    particleCount: Math.floor(count * particleRatio)
+  });
 }
