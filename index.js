@@ -87,7 +87,7 @@ function newCard() {
     }
 }
 
-// CODE FOR CONFETTI EFFECT
+// CODE FOR CONFETTI EFFECT WITH FUNCTION FIRE()
 var count = 200;
 var defaults = {
   origin: { y: 0.7 }
